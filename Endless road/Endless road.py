@@ -33,13 +33,10 @@ class RoadPoint(object):
     def __init__(self, Cluster, sensitivity,RoadPoints):
         self.i = len(RoadPoints)-1
         self.x = RoadPoints[self.i].x + Cluster
-        if RoadPoints[self.i].height < 10:
-            self.height = random.uniform(RoadPoints[self.i].height, RoadPoints[self.i].height+sensitivity)
-        elif RoadPoints[self.i].height > height-10:
+        if RoadPoints[self.i].height > height-10:
             self.height = random.uniform(RoadPoints[self.i].height-sensitivity, RoadPoints[self.i].height)
-            RoadPoints[self.i].height -= 20
         else:
-            self.height = random.uniform(RoadPoints[self.i].height-sensitivity, RoadPoints[self.i].height+sensitivity)
+            self.height = abs(random.uniform(RoadPoints[self.i].height-sensitivity, RoadPoints[self.i].height+sensitivity))
         self.y = width - self.height 
         self.width = 1
     def Draw(self, screen):
