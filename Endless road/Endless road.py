@@ -6,10 +6,11 @@ black = [0, 0, 0]
 running = True
 width = 1080
 height = 360
-Frequency = 3 # How many pixels are apart of points
+Frequency = 10 # How many pixels are apart of points
 sensitivity = 5 # How big the diffrence can be from previous height
 Fast_Loading = True # It displays faster without slowing downs through time
-Make_Connections = False # you can see it above 5 frequency
+Make_Connections = True # you can see it above 5 frequency
+roadWidth = 2 # How tall is the road
 Show_Cirles = False # puts circles on top of the points
 
 screen = pygame.display.set_mode((width,height))
@@ -51,11 +52,11 @@ class Road(object):
     def __init__(self, road, i):
         self.x = road[i-1].x
         self.y = road[i-1].height
-        self.width = math.sqrt(Frequency*Frequency + (road[i].height - road[i-1].height) * (road[i].height - road[i-1].height))
-        self.height = 2
+        self.x1 = road[i].x
+        self.y1 = road[i].height
 
     def Draw(self, screen):
-        pygame.draw.rect(screen, black,[self.x, self.y, self.width, self.height])
+        pygame.draw.polygon(screen, black,[(self.x, self.y+roadWidth), (self.x1, self.y1+roadWidth), (self.x1, self.y1), (self.x, self.y)])
 
 screen.fill(white)
 pygame.display.update()
@@ -71,7 +72,7 @@ while running == True:
     for i in range(WhereStart, len(roadPoints)):
         roadPoints[i].Draw(screen)
     if Make_Connections == True:
-        for i in range(WhereStart, len(RoadGroup)):
+        for i in range(WhereStart+1, len(RoadGroup)):
             RoadGroup[i].Draw(screen)
     roadPoint[st] = RoadPoint(Frequency, sensitivity, roadPoints)
     roadPoints.append(roadPoint[st])
