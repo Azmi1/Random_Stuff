@@ -80,7 +80,7 @@ while running == True:
         road[st] = Road(roadPoints, len(roadPoints)-1)
         RoadGroup.append(road[st])
     if roadPoint[st].x > width:
-        for i in range(0,len(roadPoints)):
+        for i in range(WhereStart,len(roadPoints)):
             roadPoints[i].x -= width
         if Make_Connections == True:
             for i in range(1,len(RoadGroup)):
@@ -88,7 +88,7 @@ while running == True:
         if Fast_Loading == True:
             WhereStart = len(roadPoints)-1
     elif roadPoint[st].x < -width:
-        for i in range(0,len(roadPoints)):
+        for i in range(WhereStart,len(roadPoints)):
             roadPoints[i].x += width
         if Make_Connections == True:
             for i in range(0,len(RoadGroup)):
