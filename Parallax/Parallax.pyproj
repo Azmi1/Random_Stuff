@@ -2,10 +2,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>33b17d02-6f1f-42f3-b710-89d77b25cea3</ProjectGuid>
+    <ProjectGuid>{d747d222-8d3a-463d-b2fa-99aac5d24425}</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>Endless road.py</StartupFile>
+    <StartupFile>Parallax.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Endless road.py" />
+    <Compile Include="Parallax.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
