@@ -7,6 +7,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Endless road", "Endless roa
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Parallax", "Parallax\Parallax.pyproj", "{D747D222-8D3A-463D-B2FA-99AAC5D24425}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Snake", "Snake\Snake.pyproj", "{338AC559-0F66-4BED-BB0E-5BB5743DA42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,8 @@ Global
 		{33B17D02-6F1F-42F3-B710-89D77B25CEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D747D222-8D3A-463D-B2FA-99AAC5D24425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D747D222-8D3A-463D-B2FA-99AAC5D24425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338AC559-0F66-4BED-BB0E-5BB5743DA42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338AC559-0F66-4BED-BB0E-5BB5743DA42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
