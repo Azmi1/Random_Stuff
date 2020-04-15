@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b1e4b177-c0e9-4475-a06b-2228aebf9965</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tower_Defense.py</StartupFile>
+    <StartupFile>Pathfinder.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,10 +21,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Pathfinder.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Tower_Defense.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GPS.txt" />
     <Content Include="Map.txt" />
+    <Content Include="Patch Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -6,6 +6,10 @@ def Create_screen(width): #creates the screen
     screen = pygame.display.set_mode((width,width))
     return screen
 
+class Enemy():
+    def __init__(self):
+        print(1)
+
 class celica():
     def __init__(self, x, y, vel):
         self.x = x
@@ -36,7 +40,40 @@ green = [0, 255, 0]
 blue = [0, 0, 255]
 black = [0, 0, 0]
 
-path = pygame.image.load("Photos/Tiles/Rocky.png").convert_alpha()
+path_texture = pygame.image.load("Photos/Tiles/Rocky.png").convert_alpha()
+
+def convert_txt_to_array():
+    game_map = []
+    for i in range(count):
+        game_map.append([])
+    for i in range(count):
+        for j in range(count):
+            vel = 'P'
+            game_map[i].append(vel)
+    f = open("Map.txt","r")
+    f.seek(0)
+    for i in range(0, count):
+        fl = f.readline()
+        for j in range(0, count):
+            game_map[i][j] = fl[j]
+    return game_map
+
+gmap = convert_txt_to_array()
+def get_path():
+    f = open("Map.txt","r")
+    fl = f.readline()
+    f.seek(0)
+    pathx = ""
+    start = "UP"
+    if start == "UP":
+        for i in range(count):
+            if fl[i] == 'X':
+                start = i
+                break
+    path += i
+    return pathx
+
+#path = get_path() 
 
 def Draw_Map(screen):
     f = open("Map.txt","r")
@@ -46,7 +83,8 @@ def Draw_Map(screen):
             if fl[j] == "O":
                 pygame.draw.rect(screen, green, [(vel_celice * j)-(j - 8), (vel_celice * i)-(i - 8), vel_celice, vel_celice])
             elif fl[j] == "X":
-                screen.blit(pygame.transform.scale(path,(vel_celice+1,vel_celice+1)), ((vel_celice * j)-(j - 8), (vel_celice * i)-(i - 8))) 
+                pygame.draw.rect(screen, red, [(vel_celice * j)-(j - 8), (vel_celice * i)-(i - 8), vel_celice, vel_celice])
+                #screen.blit(pygame.transform.scale(path_texture,(vel_celice+1,vel_celice+1)), ((vel_celice * j)-(j - 8), (vel_celice * i)-(i - 8))) 
             elif fl[j] == "N":
                 pygame.draw.rect(screen, blue, [(vel_celice * j)-(j - 8), (vel_celice * i)-(i - 8), vel_celice, vel_celice])
 def main():
