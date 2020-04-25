@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b1e4b177-c0e9-4475-a06b-2228aebf9965</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Pathfinder.py</StartupFile>
+    <StartupFile>Tower_Defense.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

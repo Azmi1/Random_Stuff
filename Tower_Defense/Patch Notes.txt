@@ -1,3 +1,8 @@
+Update 25/04/2020 23:27:
+	- Created enemy object
+	What's next?:
+		- First tower
+
 Update 15/04/2020 14:17:
 	- Created a program for pathfinding appropriately named pathfinder
 	What's next?:
