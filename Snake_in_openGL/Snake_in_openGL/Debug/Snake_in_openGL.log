@@ -1,0 +1,11 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(445,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Source.cpp
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(45,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(51,53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(89,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(116,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(143,22): warning C4018: '<': signed/unsigned mismatch
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(165,21): warning C4018: '<': signed/unsigned mismatch
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(349,46): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\src\Source.cpp(355,43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Snake_in_openGL.vcxproj -> F:\C++ Projects\Visual Studio\Snake_in_openGL\Snake_in_openGL\.\bin\Snake_in_openGL.exe

@@ -57,7 +57,7 @@ int main() {
 	Shader Shader;
 	Shader.LoadShaders("Shaders/Shader.vS", "Shaders/Shader.fS");
 
-	Snake snake(vel_tabele/2);
+	Snake snake(vel_tabele/2, vel_tabele);
 
 	FPScamera.move(glm::vec3(0));
 
@@ -107,34 +107,42 @@ int main() {
 		glm::mat4 model, view, projection;
 
 		if (keys['W'] || keys['S'] || keys['A'] || keys['D']) {
-			if (key_buffer == false || glfwGetTime() - previousSecond > lenght) {
-				previousSecond = glfwGetTime();
-				key_buffer = true;
-				snake.move(keys);
-				int pos = snake.getX() + snake.getY() * vel_tabele;
-				std::string mode = CellList[pos].getMode();
-				if (mode == "Nada"){
-					CellList[pos].setMode("Snake");
-					CellList[pos].setHP(snake.getScore());
-				}
-				else if (mode == "Snake"){
-					std::cout << "You hit yourself dummy!";
-					glfwSetWindowShouldClose(pWindow, GL_TRUE);
-				}
-				else if (mode == "Fruit") {
-					snake.upScore();
-					CellList[pos].setMode("Snake");
-					CellList[pos].setHP(snake.getScore());
-					fruit.~Fruit();
-					Fruit fruit(vel_tabele, CellList);
-				}
-				for (int i = 0; i < CellList.size(); i++) {
-					CellList[i].update();
-				}
-			}
+			snake.changeDir(keys);
+			key_buffer = true;
 		}
-		else {
+
+
+		if (glfwGetTime() - previousSecond > lenght) {
+			previousSecond = glfwGetTime();
 			key_buffer = false;
+			snake.move();
+			int x = snake.getX();
+			int y = snake.getY();
+			if (x < 0 || x >= vel_tabele || y < 0 || y >= vel_tabele) {
+				std::cout << "X: " << x << ", Y: " << y << ", vel_tabele: " << vel_tabele << std::endl;
+				std::cout << "You hit a wall you dummy...";
+				glfwSetWindowShouldClose(pWindow, GL_TRUE);
+			}
+			int pos = x + y * vel_tabele;
+			std::string mode = CellList[pos].getMode();
+			if (mode == "Nada"){
+				CellList[pos].setMode("Snake");
+				CellList[pos].setHP(snake.getScore());
+			}
+			else if (mode == "Snake" && CellList[pos].getHP() + 1 != snake.getScore()){
+				std::cout << "You hit yourself dummy!" << std::endl;
+				glfwSetWindowShouldClose(pWindow, GL_TRUE);
+			}
+			else if (mode == "Fruit") {
+				snake.upScore();
+				CellList[pos].setMode("Snake");
+				CellList[pos].setHP(snake.getScore());
+				fruit.~Fruit();
+				Fruit fruit(vel_tabele, CellList);
+			}
+			for (int i = 0; i < CellList.size(); i++) {
+				CellList[i].update();
+			}
 		}
 		
 		model = glm::mat4(1.0f);

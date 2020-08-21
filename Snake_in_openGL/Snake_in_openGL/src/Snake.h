@@ -8,9 +8,10 @@
 
 class Snake{
 public:
-	Snake(int ix);
+	Snake(int ix, int vel_tabele);
 
-	void move(bool* keys);
+	void move();
+	void changeDir(bool* keys);
 
 	int getX() { return x; }
 	int getY() { return y; }
@@ -19,6 +20,15 @@ public:
 
 	~Snake();
 private:
-	int x, y, score;
+	int x, y, score, vel_tabele;
+
+	int direct = 0;
+	enum direction {
+		UP = 1,
+		DOWN = 2,
+		LEFT = 3,
+		RIGHT = 4,
+		NO = 0
+	};
 };
 

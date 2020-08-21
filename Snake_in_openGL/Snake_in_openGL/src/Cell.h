@@ -8,6 +8,7 @@ public:
 
 	void setMode(std::string mode);
 	std::string getMode() { return mode; }
+	int getHP() { return HP; }
 
 	void setHP(int score);
 
